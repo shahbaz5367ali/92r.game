@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>Mobile Website</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    background: #0f0d18;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* =========================
+   MOBILE WEBSITE
+========================= */
+
+.mobile-page {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #0f0d18;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+.page img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* =========================
+   HIDDEN PAGES
+========================= */
+
+#homePage {
+    display: block;
+}
+
+#accountPage,
+#promotionPage {
+    display: none;
+}
+
+
+/* =====================================================
+   BOTTOM NAVIGATION CLICK AREAS
+
+   Left   = Promotion
+   Center = Home
+   Right  = Account
+===================================================== */
+
+.nav-promotion,
+.nav-home,
+.nav-account {
+
+    position: absolute;
+
+    bottom: 0;
+
+    height: 9%;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 50;
+}
+
+
+/* Promotion */
+
+.nav-promotion {
+    left: 0;
+    width: 25%;
+}
+
+
+/* Home / Game */
+
+.nav-home {
+    left: 25%;
+    width: 50%;
+}
+
+
+/* Account */
+
+.nav-account {
+    right: 0;
+    width: 25%;
+}
+
+
+/* Touch effect */
+
+.nav-promotion:active,
+.nav-home:active,
+.nav-account:active {
+
+    background: rgba(255,255,255,0.04);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .mobile-page {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 451px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="mobile-page">
+
+
+    <!-- =================================================
+         HOME PAGE
+         1.jpg
+    ================================================== -->
+
+    <div id="homePage" class="page">
+
+        <img
+            src="1.jpg"
+            alt="Home">
+
+        <!-- Promotion -->
+        <button
+            class="nav-promotion"
+            onclick="showPromotion()"
+            aria-label="Promotion">
+        </button>
+
+        <!-- Home -->
+        <button
+            class="nav-home"
+            onclick="showHome()"
+            aria-label="Home">
+        </button>
+
+        <!-- Account -->
+        <button
+            class="nav-account"
+            onclick="showAccount()"
+            aria-label="Account">
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ACCOUNT PAGE
+         2.jpg
+    ================================================== -->
+
+    <div id="accountPage" class="page">
+
+        <img
+            src="2.jpg"
+            alt="Account">
+
+        <!-- Promotion -->
+        <button
+            class="nav-promotion"
+            onclick="showPromotion()"
+            aria-label="Promotion">
+        </button>
+
+        <!-- Home -->
+        <button
+            class="nav-home"
+            onclick="showHome()"
+            aria-label="Home">
+        </button>
+
+        <!-- Account -->
+        <button
+            class="nav-account"
+            onclick="showAccount()"
+            aria-label="Account">
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROMOTION PAGE
+         3.jpg
+    ================================================== -->
+
+    <div id="promotionPage" class="page">
+
+        <img
+            src="3.jpg"
+            alt="Promotion">
+
+        <!-- Promotion -->
+        <button
+            class="nav-promotion"
+            onclick="showPromotion()"
+            aria-label="Promotion">
+        </button>
+
+        <!-- Home -->
+        <button
+            class="nav-home"
+            onclick="showHome()"
+            aria-label="Home">
+        </button>
+
+        <!-- Account -->
+        <button
+            class="nav-account"
+            onclick="showAccount()"
+            aria-label="Account">
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   SHOW HOME - 1.jpg
+===================================================== */
+
+function showHome() {
+
+    document.getElementById("homePage").style.display = "block";
+
+    document.getElementById("accountPage").style.display = "none";
+
+    document.getElementById("promotionPage").style.display = "none";
+
+    window.scrollTo(0, 0);
+}
+
+
+
+/* =====================================================
+   SHOW ACCOUNT - 2.jpg
+===================================================== */
+
+function showAccount() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    document.getElementById("accountPage").style.display = "block";
+
+    document.getElementById("promotionPage").style.display = "none";
+
+    window.scrollTo(0, 0);
+}
+
+
+
+/* =====================================================
+   SHOW PROMOTION - 3.jpg
+===================================================== */
+
+function showPromotion() {
+
+    document.getElementById("homePage").style.display = "none";
+
+    document.getElementById("accountPage").style.display = "none";
+
+    document.getElementById("promotionPage").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+</script>
+
+
+</body>
+</html>
